@@ -1,0 +1,31 @@
+<mat-form-field>
+  <mat-label class="selection">בחר סוג טיול</mat-label>
+  <mat-select class="select" disableRipple (selectionChange)="filterTrips($event)">
+    <mat-option *ngFor="let k of listTripKind" [value]="k.nameKind">{{k.nameKind}}</mat-option>
+
+  </mat-select>
+</mat-form-field>
+
+<div>
+  <div class="getTrip">
+
+    <div *ngFor="let t of allTrips">
+
+      <mat-card class="example-card">
+        <mat-card-header>
+
+          <div mat-card-avatar class="example-header-image"></div>
+        </mat-card-header>
+        <p>{{t.targetTrip}}</p>
+        <p>{{t.dateTrip}}</p>
+        <img mat-card-image src="../../../assets/pic/{{t.image}}.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="details(t.idTrip)">לפרטים</button>
+        </mat-card-actions>
+      </mat-card>
+      <br> <br>
+    </div>
+  </div>
+</div>

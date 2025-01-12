@@ -1,0 +1,30 @@
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>סיסמת משתמש</th>
+        <th>טלפון</th>
+        <th>האם יש תעדת עזרה ראשונה</th>
+        <th>קוד משתמש</th>
+        <th>אמייל</th>
+        <th>שם משפחה</th>
+        <th>שם פרטי</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="active" *ngFor="let u of allUser">
+        <td>{{u.password}}</td>
+        <td>{{u.phone}}</td>
+        <td>{{u.firstAidCertificate}}</td>
+        <td>{{u.idUse}}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.lastName}}</td>
+        <td>{{u.firstName}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,19 @@
+<div class="getTrip">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-subtitle>יעד הטיול:{{tripDto.targetTrip}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p> מחיר הטיול: {{tripDto.price}}</p>
+            <img src="../../../assets/pic/{{tripDto.image}}.jpg" width="100px">
+            <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="goBack()">לחזרה </button>
+            <button mat-button (click)="submit(tripDto)">להזמנה </button>
+        </mat-card-actions>
+        <mat-card-footer>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+    </mat-card>
+</div>

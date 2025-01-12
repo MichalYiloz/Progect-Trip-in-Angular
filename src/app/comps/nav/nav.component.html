@@ -1,0 +1,51 @@
+<mat-tab-group>
+  <mat-tab *ngIf="m== email">
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon" routerLink="AllUser">thumb_up</mat-icon>
+      <h4>שלום מיכל המנהלת</h4>
+
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab *ngIf=" m != email">
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon" routerLink="MyPersonal">thumb_up</mat-icon>
+      <h4>לאזור האישי {{name}}</h4>
+    </ng-template>
+  </mat-tab>
+
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon" routerLink="AllTrip">thumb_up</mat-icon>
+      <h4>לכל הטיולים</h4>
+
+    </ng-template>
+  </mat-tab>
+
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon" routerLink="Home">thumb_up</mat-icon>
+      <h4>לדף הבית</h4>
+
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon" routerLink="Login">thumb_up</mat-icon>
+      <h4>להתחברות</h4>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon" routerLink="Register">thumb_up</mat-icon>
+      <h4>להרשמה</h4>
+
+    </ng-template>
+
+  </mat-tab>
+</mat-tab-group>
+<router-outlet></router-outlet>

@@ -1,0 +1,19 @@
+.example-card {
+
+  max-width: 250px;
+  border: solid 2px rgb(4, 4, 4);
+  margin: 2px;
+}
+
+.getTrip {
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.example-header-image {
+  background-image: url('../../../assets/pic/10.jpg');
+  background-size: cover;
+}

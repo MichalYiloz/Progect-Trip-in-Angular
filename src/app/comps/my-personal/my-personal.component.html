@@ -1,0 +1,118 @@
+<h2>:לעריכת הפרטים</h2>
+
+<div class="form">
+
+  <form (ngSubmit)="onSubmit()">
+
+    <mat-stepper orientation="vertical" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>הכנס מייל</ng-template>
+          <mat-form-field>
+            <mat-label>שם</mat-label>
+            <input type="text" id="email" name="iji" [(ngModel)]="user.email" matInput placeholder="@gmail.com"
+              formControlName="firstCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>מלא סיסמא</ng-template>
+          <mat-form-field>
+            <mat-label>סיסמא</mat-label>
+            <input type="password" id="password" [(ngModel)]="user.password" matInput formControlName="secondCtrl"
+              placeholder="סיסמא" required name="ahuha">
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>מלא טלפון</ng-template>
+          <mat-form-field>
+            <mat-label>טלפון</mat-label>
+            <input type="text" id="text" [(ngModel)]="user.phone" matInput formControlName="secondCtrl"
+              placeholder="טלפון" required name="aau">
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>מלא שם משפחה</ng-template>
+          <mat-form-field>
+            <mat-label>שם משפחה</mat-label>
+            <input type="text" id="text" [(ngModel)]="user.lastName" matInput formControlName="secondCtrl"
+              placeholder="שם משפחה" required name="aa">
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>מלא שם פרטי</ng-template>
+          <mat-form-field>
+            <mat-label>שם פרטי</mat-label>
+            <input type="text" id="password" [(ngModel)]="user.firstName" matInput formControlName="secondCtrl"
+              placeholder="שם פרטי" required name="j">
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+
+      <mat-step>
+        <ng-template matStepLabel>לאישור</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button type="submit"> To submit </button>
+
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </form>
+</div>
+<p>זהירות לאחר לחיצה על הכפתור הבא תמחק מהאתר!!!</p>
+<button type="button" class="btn btn-info" (click)="deleteMe()">ליציאה מהאתר</button>
+<br>
+<br>
+
+<button type="button" class="btn btn-info" (click)="allMyTrip()">להצגת טיולים שנרשמת אליהם </button>
+<br>
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>מחיר הטיול</th>
+        <th>יעד הטיול</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="active" *ngFor="let u of Mytrip">
+        <td>{{u.price}}</td>
+        <td>{{u.targetTrip}}</td>
+    </tbody>
+  </table>
